@@ -1,0 +1,60 @@
+---
+- name: Deploy SQL Server with Docker and backup automation
+  hosts: sql_servers
+  become: yes
+  tasks:
+    - name: Install Docker
+      ansible.builtin.apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Install Docker Compose
+      ansible.builtin.shell: |
+        sudo curl -L "https://github.com/docker/compose/releases/download/v2.22.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        sudo chmod +x /usr/local/bin/docker-compose
+      args:
+        creates: /usr/local/bin/docker-compose
+
+    - name: Create backup directory
+      ansible.builtin.file:
+        path: /home/{{ ansible_user }}/SqlBackup
+        state: directory
+        owner: {{ ansible_user }}
+        mode: '0755'
+
+    - name: Deploy Docker Compose for SQL Server
+      ansible.builtin.copy:
+        src: ./docker-compose.yml
+        dest: /home/{{ ansible_user }}/docker-compose.yml
+        owner: {{ ansible_user }}
+        mode: '0644'
+
+    - name: Start SQL Server container
+      ansible.builtin.shell: |
+        docker-compose -f /home/{{ ansible_user }}/docker-compose.yml up -d
+      args:
+        chdir: /home/{{ ansible_user }}
+      register: docker_status
+
+    - name: Setup SQL Server backup script
+      ansible.builtin.copy:
+        src: ./backup_all_databases.sql
+        dest: /home/{{ ansible_user }}/backup_all_databases.sql
+        owner: {{ ansible_user }}
+        mode: '0644'
+
+    - name: Setup SQL Server backup Bash script
+      ansible.builtin.copy:
+        src: ./run_backup_all.sh
+        dest: /home/{{ ansible_user }}/run_backup_all.sh
+        owner: {{ ansible_user }}
+        mode: '0755'
+
+    - name: Schedule backup job with cron
+      ansible.builtin.cron:
+        name: "SQL Server Backup"
+        job: "/home/{{ ansible_user }}/run_backup_all.sh"
+        user: "{{ ansible_user }}"
+        minute: "0"
+        hour: "2"

@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  mysql8-container:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
+    ports: 
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Abc@1234
+      MYSQL_DATABASE: greenhouse-data
+    # command: --default-authentication-plugin=mysql_native_password
+      # (Cần khi sử dụng phpmyadmin)
+      # MYSQL_ROOT_HOST: "%"
+    volumes:
+      - ./sql/green_house.sql:/docker-entrypoint-initdb.d/init-script.sql
+    networks:
+      - bookingapp-network
+
+  # phpmyadmin5-container:
+  #   image: phpmyadmin/phpmyadmin
+  #   container_name: phpmyadmin5-container
+  #   restart: always
+  #   ports: 
+  #     - "8100:80"
+  #   environment:
+  #     PMA_HOST: mysql8-container
+  #   networks:
+  #     - bookingapp-network
+
+networks:
+  bookingapp-network:
+    name: bookingapp-network
+    driver: bridge

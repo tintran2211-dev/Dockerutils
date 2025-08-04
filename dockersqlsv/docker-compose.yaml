@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y         # Đồng ý với thỏa thuận sử dụng
+      - SA_PASSWORD=Abc@1234 # Đặt mật khẩu cho tài khoản SA
+    volumes:
+      - sql_data:/var/opt/mssql   # Lưu trữ dữ liệu SQL Server
+      - /home/bonjour/Desktop/dockersqlsv/SqlDataBak:/var/opt/mssql/backup
+    networks:
+      - sql_network
+
+volumes:
+  sql_data:
+    driver: local
+
+networks:
+  sql_network:
+    driver: bridge
