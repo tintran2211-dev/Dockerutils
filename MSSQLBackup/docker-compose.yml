@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  mssql:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mssql-container
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${SA_PASSWORD}
+      - DB_NAME=${DB_NAME}
+    volumes:
+      - mssql_data:/var/opt/mssql
+      - ./backup:/var/opt/mssql/backup  # Mount thư mục backup
+      - ./logs:/var/opt/mssql/logs      # Mount thư mục logs
+      - ./cron_jobs/backup_cron:/etc/cron.d/backup_cron  # Mount cron job
+      - ./backup.sh:/var/opt/mssql/backup/backup.sh  # Mount backup script
+    ports:
+      - "1433:1433"
+    command: /bin/bash -c "cron && /opt/mssql/bin/sqlservr"  # Chạy cron cùng SQL Server
+
+volumes:
+  mssql_data:

@@ -1,0 +1,7 @@
+RESTORE DATABASE TestBackupDatabase
+FROM DISK = '/var/opt/mssql/backup/full-backup-20241221145001.bak'
+WITH 
+    MOVE 'TEST_BAK' TO '/var/opt/mssql/data/NewDatabaseName.mdf',
+    MOVE 'TEST_BAK_log' TO '/var/opt/mssql/data/NewDatabaseName_log.ldf',
+    REPLACE;
+GO

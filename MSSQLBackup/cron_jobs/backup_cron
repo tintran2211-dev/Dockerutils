@@ -1,0 +1,1 @@
+*/5 * * * * /bin/bash /var/opt/mssql/backup/backup.sh >> /var/opt/mssql/logs/backup.log 2>&1

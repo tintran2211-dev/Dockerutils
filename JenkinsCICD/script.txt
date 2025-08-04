@@ -1,0 +1,103 @@
+pipeline {
+    agent any
+    environment {
+        // Thêm thông tin cho repository và credentials nếu cần
+        REPO_URL = 'https://bitbucket.org/haphuongviettinlab/labconnect.pro.standard'
+        BRANCH_NAME = 'fearture/tin-labconnect-pro'
+    }
+    tools {
+        nodejs 'NodeJS 20.11.0'
+    }
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: "${BRANCH_NAME}", url: "${REPO_URL}", credentialsId: 'jenkins-docker'
+            }
+        }
+    stage('Install Dependencies') {
+            steps {
+                script {
+                    dir('FrontEnd/Labconnect.ResultPatientOnline') {
+                        // Cài đặt dependencies bằng npm
+                        sh 'npm install --legacy-peer-deps'
+                    }
+                }
+            }
+        }
+    stage('Build Docker Images with Docker Compose') {
+            steps {
+                script {
+                    dir('FrontEnd/Labconnect.ResultPatientOnline') {  // Điều hướng tới thư mục chứa docker-compose.yml nếu có
+                        // Build và chạy các container sử dụng docker-compose
+                        sh 'docker-compose build'   // Xây dựng các image theo cấu hình docker-compose.yml
+                    }
+                }
+            }
+        }
+    stage('Run Docker Compose') {
+            steps {
+                script {
+                    dir('FrontEnd/Labconnect.ResultPatientOnline') {  // Điều hướng tới thư mục chứa docker-compose.yml nếu có
+                        // Chạy docker-compose để khởi động các container
+                        sh 'docker-compose up'  // Chạy các container ở chế độ detached
+                    }
+                }
+            }
+        }
+    }
+    post {
+        success {
+            echo 'Build successful!'
+        }
+        failure {
+            echo 'Build failed.'
+        }
+    }
+}
+
+
+pipeline {
+    agent any
+    environment {
+        // Thêm thông tin cho repository và credentials nếu cần
+        REPO_URL = 'https://bitbucket.org/haphuongviettinlab/labconnect.pro.standard'
+        BRANCH_NAME = 'fearture/tin-labconnect-pro'
+    }
+    tools {
+        nodejs 'NodeJS 20.11.0'
+    }
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: "${BRANCH_NAME}", url: "${REPO_URL}", credentialsId: 'jenkins-docker'
+            }
+        }
+    stage('Install Dependencies') {
+            steps {
+                script {
+                    dir('FrontEnd/Labconnect.ResultPatientOnline') {
+                        // Cài đặt dependencies bằng npm
+                        sh 'npm install --legacy-peer-deps'
+                    }
+                }
+            }
+        }
+    stage('NPM Start') {
+            steps {
+                script {
+                    dir('FrontEnd/Labconnect.ResultPatientOnline') {  // Điều hướng tới thư mục chứa docker-compose.yml nếu có
+                        // Build và chạy các container sử dụng docker-compose
+                        sh 'npm start'   // Xây dựng các image theo cấu hình docker-compose.yml
+                    }
+                }
+            }
+        }
+    post {
+        success {
+            echo 'Build successful!'
+        }
+        failure {
+            echo 'Build failed.'
+        }
+    }
+}

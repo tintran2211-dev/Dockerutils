@@ -1,0 +1,160 @@
+/bin/sh: 1: root: not found
+/var/opt/mssql/backup/backup.sh: line 3: /var/opt/mssql/.env: No such file or directory
+Một số biến môi trường chưa được thiết lập. Vui lòng kiểm tra file .env.
+/var/opt/mssql/backup/backup.sh: line 3: .env: No such file or directory
+Một số biến môi trường chưa được thiết lập. Vui lòng kiểm tra file .env.
+/var/opt/mssql/backup/backup.sh: line 3: .env: No such file or directory
+Một số biến môi trường chưa được thiết lập. Vui lòng kiểm tra file .env.
+2024-12-21 14:00:01 - Starting backup for TEST_BAK
+Msg 911, Level 16, State 11, Server b88447cbdfdb, Line 1
+Database 'TEST_BAK' does not exist. Make sure that the name is entered correctly.
+Msg 3013, Level 16, State 1, Server b88447cbdfdb, Line 1
+BACKUP DATABASE is terminating abnormally.
+2024-12-21 14:00:01 - Backup for TEST_BAK completed successfully
+2024-12-21 14:00:01 - Backup completed and old backups removed
+2024-12-21 14:05:01 - Starting backup for TEST_BAK
+Msg 911, Level 16, State 11, Server b88447cbdfdb, Line 1
+Database 'TEST_BAK' does not exist. Make sure that the name is entered correctly.
+Msg 3013, Level 16, State 1, Server b88447cbdfdb, Line 1
+BACKUP DATABASE is terminating abnormally.
+2024-12-21 14:05:01 - Backup for TEST_BAK completed successfully
+2024-12-21 14:05:01 - Backup completed and old backups removed
+2024-12-21 14:10:01 - Starting backup for TEST_BAK
+Processed 416 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 418 pages in 0.049 seconds (66.565 MB/sec).
+2024-12-21 14:10:02 - Backup for TEST_BAK completed successfully
+2024-12-21 14:10:02 - Backup completed and old backups removed
+2024-12-21 14:15:01 - Starting backup for TEST_BAK
+Processed 416 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 418 pages in 0.034 seconds (95.932 MB/sec).
+2024-12-21 14:15:01 - Backup for TEST_BAK completed successfully
+2024-12-21 14:15:01 - Backup completed and old backups removed
+2024-12-21 14:20:01 - Starting backup for TEST_BAK
+Processed 424 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 426 pages in 0.039 seconds (85.236 MB/sec).
+2024-12-21 14:20:01 - Backup for TEST_BAK completed successfully
+2024-12-21 14:20:01 - Backup completed and old backups removed
+2024-12-21 14:25:01 - Starting backup for TEST_BAK
+Processed 432 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 434 pages in 0.034 seconds (99.609 MB/sec).
+2024-12-21 14:25:01 - Backup for TEST_BAK completed successfully
+2024-12-21 14:25:01 - Backup completed and old backups removed
+2024-12-21 14:30:01 - Starting backup for TEST_BAK
+Processed 432 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 434 pages in 0.034 seconds (99.609 MB/sec).
+2024-12-21 14:30:01 - Backup for TEST_BAK completed successfully
+2024-12-21 14:30:01 - Backup completed and old backups removed
+2024-12-21 14:35:01 - Starting backup for TEST_BAK
+Processed 432 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 434 pages in 0.034 seconds (99.609 MB/sec).
+2024-12-21 14:35:01 - Backup for TEST_BAK completed successfully
+2024-12-21 14:35:01 - Backup completed and old backups removed
+2024-12-21 14:40:01 - Starting backup for TEST_BAK
+Processed 432 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 434 pages in 0.036 seconds (94.075 MB/sec).
+2024-12-21 14:40:01 - Backup for TEST_BAK completed successfully
+2024-12-21 14:40:01 - Backup completed and old backups removed
+2024-12-21 14:45:01 - Starting backup for TEST_BAK
+Processed 432 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 434 pages in 0.034 seconds (99.609 MB/sec).
+2024-12-21 14:45:01 - Backup for TEST_BAK completed successfully
+2024-12-21 14:45:01 - Backup completed and old backups removed
+2024-12-21 14:50:01 - Starting backup for TEST_BAK
+Processed 432 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 434 pages in 0.034 seconds (99.609 MB/sec).
+2024-12-21 14:50:02 - Backup for TEST_BAK completed successfully
+2024-12-21 14:50:02 - Backup completed and old backups removed
+2024-12-21 14:55:01 - Starting backup for TEST_BAK
+Processed 432 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 434 pages in 0.032 seconds (105.834 MB/sec).
+2024-12-21 14:55:01 - Backup for TEST_BAK completed successfully
+2024-12-21 14:55:01 - Backup completed and old backups removed
+2024-12-21 15:00:01 - Starting backup for TEST_BAK
+Processed 432 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 434 pages in 0.034 seconds (99.609 MB/sec).
+2024-12-21 15:00:01 - Backup for TEST_BAK completed successfully
+2024-12-21 15:00:01 - Backup completed and old backups removed
+2024-12-21 15:05:01 - Starting backup for TEST_BAK
+Processed 432 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 434 pages in 0.034 seconds (99.609 MB/sec).
+2024-12-21 15:05:01 - Backup for TEST_BAK completed successfully
+2024-12-21 15:05:01 - Backup completed and old backups removed
+2024-12-21 15:10:01 - Starting backup for TEST_BAK
+Processed 432 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 434 pages in 0.035 seconds (96.763 MB/sec).
+2024-12-21 15:10:01 - Backup for TEST_BAK completed successfully
+2024-12-21 15:10:01 - Backup completed and old backups removed
+/bin/sh: 1: root: not found
+2024-12-23 08:10:01 - Starting backup for TEST_BAK
+Processed 432 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 434 pages in 0.033 seconds (102.627 MB/sec).
+2024-12-23 08:10:01 - Backup for TEST_BAK completed successfully
+2024-12-23 08:10:01 - Backup completed and old backups removed
+2024-12-23 08:15:01 - Starting backup for TEST_BAK
+Processed 432 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 434 pages in 0.034 seconds (99.609 MB/sec).
+2024-12-23 08:15:01 - Backup for TEST_BAK completed successfully
+2024-12-23 08:15:01 - Backup completed and old backups removed
+2024-12-23 08:20:01 - Starting backup for TEST_BAK
+Processed 440 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 442 pages in 0.034 seconds (101.447 MB/sec).
+2024-12-23 08:20:01 - Backup for TEST_BAK completed successfully
+2024-12-23 08:20:01 - Backup completed and old backups removed
+2024-12-23 08:25:01 - Starting backup for TEST_BAK
+Processed 456 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 458 pages in 0.033 seconds (108.309 MB/sec).
+2024-12-23 08:25:01 - Backup for TEST_BAK completed successfully
+2024-12-23 08:25:01 - Backup completed and old backups removed
+2024-12-23 08:30:01 - Starting backup for TEST_BAK
+Processed 448 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 450 pages in 0.033 seconds (106.415 MB/sec).
+2024-12-23 08:30:01 - Backup for TEST_BAK completed successfully
+2024-12-23 08:30:01 - Backup completed and old backups removed
+2024-12-23 08:35:01 - Starting backup for TEST_BAK
+Processed 456 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 458 pages in 0.036 seconds (99.283 MB/sec).
+2024-12-23 08:35:02 - Backup for TEST_BAK completed successfully
+2024-12-23 08:35:02 - Backup completed and old backups removed
+2024-12-23 08:40:01 - Starting backup for TEST_BAK
+Processed 456 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 458 pages in 0.035 seconds (102.120 MB/sec).
+2024-12-23 08:40:01 - Backup for TEST_BAK completed successfully
+2024-12-23 08:40:01 - Backup completed and old backups removed
+2024-12-23 09:00:01 - Starting backup for TEST_BAK
+Processed 456 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 458 pages in 0.037 seconds (96.600 MB/sec).
+2024-12-23 09:00:01 - Backup for TEST_BAK completed successfully
+2024-12-23 09:00:01 - Backup completed and old backups removed
+2024-12-23 10:00:01 - Starting backup for TEST_BAK
+Processed 456 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 458 pages in 0.034 seconds (105.124 MB/sec).
+2024-12-23 10:00:01 - Backup for TEST_BAK completed successfully
+2024-12-23 10:00:01 - Backup completed and old backups removed
+2024-12-23 11:00:01 - Starting backup for TEST_BAK
+Processed 456 pages for database 'TEST_BAK', file 'TEST_BAK' on file 1.
+Processed 2 pages for database 'TEST_BAK', file 'TEST_BAK_log' on file 1.
+BACKUP DATABASE successfully processed 458 pages in 0.038 seconds (94.058 MB/sec).
+2024-12-23 11:00:01 - Backup for TEST_BAK completed successfully
+2024-12-23 11:00:01 - Backup completed and old backups removed

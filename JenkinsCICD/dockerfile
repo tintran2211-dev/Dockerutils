@@ -1,0 +1,15 @@
+# Sử dụng Jenkins LTS image chính thức
+FROM jenkins/jenkins:lts
+
+# Bật chế độ Docker trong Docker (tùy chọn, nếu cần build Docker images từ Jenkins)
+USER root
+
+# Cập nhật hệ thống và cài đặt Docker
+RUN apt-get update && apt-get install -y \
+    docker.io \
+    curl \
+    && curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
+    && chmod +x /usr/local/bin/docker-compose
+
+# Trở lại người dùng Jenkins
+# USER jenkins

@@ -1,0 +1,8 @@
+docker rmi $(docker images -q)
+docker rmi -f $(docker images -q)
+docker rm -f $(docker ps -aq)
+docker volume prune -f
+docker builder prune -f
+docker network prune -f
+docker system prune -a -f --volumes
+
