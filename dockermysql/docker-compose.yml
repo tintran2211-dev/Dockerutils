@@ -9,12 +9,12 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: Abc@1234
-      MYSQL_DATABASE: greenhouse-data
+      MYSQL_DATABASE: building_management
     # command: --default-authentication-plugin=mysql_native_password
       # (Cần khi sử dụng phpmyadmin)
       # MYSQL_ROOT_HOST: "%"
     volumes:
-      - ./sql/green_house.sql:/docker-entrypoint-initdb.d/init-script.sql
+      - ./sql/buiding_management.sql:/docker-entrypoint-initdb.d/init-script.sql
     networks:
       - bookingapp-network
 

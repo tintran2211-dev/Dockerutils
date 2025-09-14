@@ -16,7 +16,7 @@ services:
     volume: 
       - ./sql/booking_hotel.sql:/docker-entrypoint-initdb.d/init-script.sql
     networks:
-      - bookingapp-network
+      - app-network
 
   # phpmyadmin5-container:
   #   image: phpmyadmin/phpmyadmin
@@ -27,9 +27,9 @@ services:
   #   environment:
   #     PMA_HOST: mysql8-container
   #   networks:
-  #     - bookingapp-network
+  #     - app-network
 
 networks:
-  bookingapp-network:
-    name: bookingapp-network
+  app-network:
+    name: app-network
     driver: bridge
